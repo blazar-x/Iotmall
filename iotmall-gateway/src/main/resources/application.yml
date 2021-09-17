@@ -1,0 +1,70 @@
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: product_route
+          uri: lb://iotmall-product
+          predicates:
+            - Path=/api/product/**,/hello
+          filters:
+            - RewritePath=/api/(?<segment>.*),/$\{segment}  #路径重写
+
+        - id: member_route
+          uri: lb://iotmall-member
+          predicates:
+            - Path=/api/member/**
+          filters:
+            - RewritePath=/api/(?<segment>.*),/$\{segment}
+
+        - id: ware_route
+          uri: lb://iotmall-ware
+          predicates:
+            - Path=/api/ware/**
+          filters:
+            - RewritePath=/api/(?<segment>.*),/$\{segment}
+
+        - id: third_party_route
+          uri: lb://iotmall-third-party
+          predicates:
+            - Path=/api/thirdparty/**
+          filters:
+            - RewritePath=/api/thirdparty/(?<segment>.*),/$\{segment}
+
+        - id: admin_route
+          uri: lb://renren-fast
+          predicates:
+            - Path=/api/**
+          filters:
+            - RewritePath=/api/(?<segment>.*),/renren-fast/$\{segment}  #路径重写
+
+        - id: iotmall_host_route
+          uri: lb://iotmall-product
+          predicates:
+            - Host=iotmall.com,item.iotmall.com
+
+        - id: iotmall_search_route
+          uri: lb://iotmall-search
+          predicates:
+            - Host=search.iotmall.com
+
+        - id: iotmall_auth_route
+          uri: lb://iotmall-auth-server
+          predicates:
+            - Host=auth.iotmall.com
+
+        - id: iotmall_cart_route
+          uri: lb://iotmall-cart
+          predicates:
+            - Host=cart.iotmall.com
+
+        - id: iotmall_cart_route
+          uri: lb://iotmall-order
+          predicates:
+            - Host=order.iotmall.com
+
+
+
+        
+        
+
+
