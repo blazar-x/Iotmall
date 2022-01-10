@@ -4,16 +4,16 @@ spring:
       discovery:
         server-addr: 127.0.0.1:8848
     alicloud:
-      access-key: LTAI5tShHPTsH6ZZvvV9TAqN
-      secret-key: fq4dr5UFmj7jWKGq8rA61dkq6ttR4S
+      access-key: XXXXXXXXXXXXXXXXXXXXXXXXXXXX
+      secret-key: XXXXXXXXXXXXXXXXXXXXXXXXXXXX
       oss:
-        endpoint: oss-cn-beijing.aliyuncs.com
-        bucket: iotmall
+        endpoint: XXXXXXXXXXXXXXXXXXXXXXXXXXXX
+        bucket: XXXXXXXXXXXXXXXXXXXXXXXXXXXX
       sms:
-        host: http://gyytz.market.alicloudapi.com
+        host: XXXXXXXXXXXXXXXXXXXXXXXXXXXX
         path: /sms/smsSend?
         template_id: TPL_0000
-        appcode: ed7e1b36a7e74dc4b496624897a0b55c
+        appcode: XXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
   application:
     name: iotmall-third-party
